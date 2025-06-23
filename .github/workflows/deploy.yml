@@ -1,0 +1,14 @@
+name: Deploy Voting App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy app using Docker Compose
+        run: docker-compose up -d
